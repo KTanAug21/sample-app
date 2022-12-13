@@ -1,66 +1,40 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## Hello, what is this?
+This is a repository containing the codebase for different applications I use for writing articles, or testing out things really.
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+## Deployed through Fly.io!
+[Livewire](https://laravel-livewire.com/) apps--any apps really--are faster close to your users. 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Deploy your Laravel-Livewire app in a jiffy with [Fly.io](https://fly.io/docs/laravel/), wherever your users may be!
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+I finally deployed mine close to me in my own little space. 
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Visit https://ktan-app.fly.dev/, up in [Fly.io](https://fly.io/) :heartbeat:
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Set up
+1. Clone the repository `git clone git@github.com:KTanAug21/sample-app.git`
+2. Get our vendor packages, run `composer update`
+3. Follow the Tailwind setup [here](https://tailwindcss.com/docs/guides/laravel) and Run `npm run dev`
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Deploying through Fly.io
+1. Follow the deployment instructions [here](https://fly.io/docs/laravel/).
+2. This repo is configured with Github CI Actions for auto deployment! So any git push to the repo sends an automatic re-deployment of my Fly App! Read how to quickly [set up here](https://fly.io/docs/laravel/the-basics/github-actions/).
+3. You might run into "Mix manifest not found" error. If so, make sure to remove any mix('...') found in your application. In this repository's case, the `resources/views/welcome.blade.php` came with a `<link href="{{ mix('/css/app.css') }}" rel="stylesheet">` I had to remove.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Constitution
+1. This is a [Laravel](https://laravel.com/) project :)
+2. Makes use of [Livewire](https://laravel-livewire.com/docs/2.x/quickstart#install-livewire)
+3. And [Tailwind](https://tailwindcss.com/docs/guides/laravel), hence the `npm run dev` above
+4. Flown with [Fly.io](https://fly.io/)
 
-## Laravel Sponsors
+## Talk To Me
+This page is found in https://blue-sun-6217.fly.dev/talk-to-me-page. 
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+It is a simple chat bot page where users can send messages to the server and receive a response per message. The server tries to find keywords from the message sent, and randomly sends back from a list of messages that are allocated for the keyword. If it's not no appropriate keyword is found the server picks a message randomly from a default list of messages.
 
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Relevant files:
+1. app/Http/Livewire/TalkToMe.php
+2. app/Models/Chatbot.php
+3. resources/views/livewire/talk-to-me.blade.php
+4. resources/views/talk-to-me/index.blade.php
