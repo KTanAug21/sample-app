@@ -31,7 +31,7 @@ Visit https://blue-sun-6217.fly.dev/, up in [Fly.io](https://fly.io/) :heartbeat
 ## Talk To Me
 This page is found in https://blue-sun-6217.fly.dev/talk-to-me-page. 
 
-It is a simple chat bot page where users can send messages to the server and receive a response per message. The server tries to find keywords from the message sent, and randomly sends back from a list of messages that are allocated for the keyword. If it's not no appropriate keyword is found the server picks a message randomly from a default list of messages.
+It is a simple chat bot page where users can send messages to the server and receive a response per message. The server tries to find keywords from the message sent, and randomly sends back from a list of messages that are allocated for the keyword. If no appropriate keyword is found, the server picks a message randomly from a default list of messages.
 
 Relevant files:
 1. app/Http/Livewire/TalkToMe.php
