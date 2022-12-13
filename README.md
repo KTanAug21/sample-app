@@ -9,7 +9,7 @@ Deploy your Laravel-Livewire app in a jiffy with [Fly.io](https://fly.io/docs/la
 
 I finally deployed mine close to me in my own little space. 
 
-Visit https://ktan-app.fly.dev/, up in [Fly.io](https://fly.io/) :heartbeat:
+Visit https://blue-sun-6217.fly.dev/, up in [Fly.io](https://fly.io/) :heartbeat:
 
 
 ## Set up
