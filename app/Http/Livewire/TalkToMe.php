@@ -11,12 +11,12 @@ class TalkToMe extends Component
 
     public function mount()
     {
-        $this->goodList = array_keys((new \App\Models\ChatBot)->goodMessageList());
+        $this->goodList = (new \App\Services\ChatBot)->goodMessageList();
     }
 
     function getResponse()
     {
-        $response = (new \App\Models\ChatBot)->processMessage($this->msg);
+        $response = (new \App\Services\ChatBot)->processMessage($this->msg);
         $this->dispatchBrowserEvent('response-received', ['response'=>$response]);
     }
 
