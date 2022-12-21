@@ -51,7 +51,7 @@ class ReplayWriteRequest
      * 
      * @return bool
      */
-    function allowReplayTo( string $replayTo, $stateBagStr ) : bool
+    function allowReplayTo( $replayTo, $stateBagStr ) 
     {
         if(strpos($stateBagStr,$replayTo)===false){
             Log::info('Allowing Replay to region '.$replayTo.', since its not yet in state bag '.$stateBagStr );
@@ -67,7 +67,7 @@ class ReplayWriteRequest
      * 
      * @return string
      */
-    function getReplayTo() : string
+    function getReplayTo()
     {
         // Reapply to map
         $replayToList = [
@@ -92,7 +92,7 @@ class ReplayWriteRequest
      * @param \Illuminate\Http\Request $request
      * @return string
      */
-    function getStateBag( Request $request ) : string
+    function getStateBag( Request $request ) 
     {
         if ($request->hasHeader('fly-replay-src')) {
             Log::info( 'fly-replay-src headers: '.json_encode( $request->header('fly-replay-src') ) );
