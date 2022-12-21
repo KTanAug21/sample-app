@@ -6,9 +6,9 @@
         Upload
         </span>
     </h1>
-    <form action="update" method="post" enctype="multipart/form-data">
+    <form action="store" method="post" enctype="multipart/form-data">
         @csrf
-        <input type="file" name="photo">
+        <input type="file" name="mFile">
      
         @error('photo') <span class="error">{{ $message }}</span> @enderror
      

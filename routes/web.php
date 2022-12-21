@@ -17,11 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// php-js with livewire
 Route::get('/talk-to-me-page', function () {
     return view('talk-to-me.index');
 });
 
-Route::get('/uploads/show', [\App\Http\Controllers\FileUploadController::class,'show']);
-
-Route::post('/uploads/update', [\App\Http\Controllers\FileUploadController::class,'update'])->middleware(['fly-replay']);;
-
+// global local storage with fly-replay
+Route::controller(\App\Http\Controllers\FileUploadController::class)->group(function(){
+    Route::prefix('uploads')->group(function(){
+        Route::get('show','show');
+        Route::post('store','store')->middleware(['fly-replay']);
+    }); 
+});

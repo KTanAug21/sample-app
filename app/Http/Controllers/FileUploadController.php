@@ -2,7 +2,7 @@
  
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+
 use Log;
 class FileUploadController extends Controller
 {
@@ -18,11 +18,25 @@ class FileUploadController extends Controller
         return view('file-upload.index', []);
     }
 
-    public function update(Request $req)
+    /**
+     * Upload image
+     * 
+     * @param \Illuminate\Http\Request $request
+     * @return redirect
+     */
+    public function store(Request $request)
     {
-        Log::info('recieved update request');
-        $req->file('photo')->store('storage/uploads');
+        // some validation here later
 
-        return redirect('/uploads/show');
+        // Upload file
+        Log::info('recieved update request');
+        $file = $request->file('mFile');
+        $file->storeAs(
+            'storage/uploads',
+            $file->getClientOriginalName()
+        );
+        
+        // Go back to form
+        return redirect('/uploads/show'.['status'=>201]);
     }
 }

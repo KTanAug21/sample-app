@@ -20,13 +20,12 @@ class ReplayWriteRequest
         // Complete Request First
         $response = $next($request);
         
-        // Get replay to region and the state bag
+        // Get replay-to region and the state bag
         $replayTo    = $this->getReplayTo();
         $stateBagStr = $this->getStateBag( $request );
 
-        // Allow replay if replay to is not yet in state bag
+        // Allow replay if replay-to is not yet in state bag
         if( $this->allowReplayTo( $replayTo, $stateBagStr ) ){
-           
             // Append currentRegion to stateBag
             $stateBagStr .= env('FLY_REGION').'_';
             Log::info( 'updated state bag is '. $stateBagStr);
@@ -77,7 +76,7 @@ class ReplayWriteRequest
             'yul' => 'ams'
         ];
 
-        // Get the current region's replay to region
+        // Get the current region's replay to region( this env variable is configured by Fly.io )
         $currentRegion = env('FLY_REGION');
         Log::info('CurrentRegion is '.$currentRegion);
         
