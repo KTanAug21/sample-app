@@ -21,3 +21,7 @@ Route::get('/talk-to-me-page', function () {
     return view('talk-to-me.index');
 });
 
+Route::get('/uploads/show', [\App\Http\Controllers\FileUploadController::class,'show']);
+
+Route::post('/uploads/update', [\App\Http\Controllers\FileUploadController::class,'update'])->middleware(['fly-replay']);;
+

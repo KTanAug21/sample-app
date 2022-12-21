@@ -1,6 +1,6 @@
-# fly.toml file generated for blue-sun-6217 on 2022-12-13T13:43:19+03:00
+# fly.toml file generated for withered-frog-7998 on 2022-12-21T20:10:50+03:00
 
-app = "blue-sun-6217"
+app = "withered-frog-7998"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
