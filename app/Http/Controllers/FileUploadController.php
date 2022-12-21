@@ -35,8 +35,8 @@ class FileUploadController extends Controller
             'storage/uploads',
             $file->getClientOriginalName()
         );
-        
+
         // Go back to form
-        return redirect('/uploads/show'.['status'=>201]);
+        return redirect('/uploads/show',['status'=>201]);
     }
 }
