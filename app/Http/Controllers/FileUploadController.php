@@ -37,6 +37,6 @@ class FileUploadController extends Controller
         );
 
         // Go back to form
-        return redirect('/uploads/show',['status'=>201]);
+        return redirect('/uploads/show');
     }
 }
