@@ -9,9 +9,6 @@
     <form action="store" method="post" enctype="multipart/form-data">
         @csrf
         <input type="file" name="mFile">
-     
-        @error('photo') <span class="error">{{ $message }}</span> @enderror
-     
         <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Save Photo</button>
     </form>
 </div>

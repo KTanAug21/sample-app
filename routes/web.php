@@ -29,3 +29,4 @@ Route::controller(\App\Http\Controllers\FileUploadController::class)->group(func
         Route::post('store','store')->middleware(['fly-replay']);
     }); 
 });
+
